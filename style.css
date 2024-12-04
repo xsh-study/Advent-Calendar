@@ -1,0 +1,63 @@
+.calendar {
+    display: grid;
+    font-family: sans-serif;
+}
+
+/* Small screens (e.g., mobile phones): 2 numbers per row, 50px cell size */
+@media (max-width: 400px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .calendar div {
+        min-width: 15px;
+        aspect-ratio: 1/1;
+    }
+}
+
+/* Medium screens (e.g., tablets): 5 numbers per row, 40px cell size */
+@media (min-width: 401px) and (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+    .calendar div {
+        min-width: 15px;
+        aspect-ratio: 1/1;
+    }
+}
+
+/* Large screens (e.g., desktops): 7 numbers per row, 30px cell size */
+@media (min-width: 769px) {
+    .calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 20px;
+    }
+    .calendar div {
+        min-width: 15px;
+        aspect-ratio: 1/1;
+    }
+}
+
+.calendar div {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #007bff; /* Blue */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Change cursor to hand */
+}
+
+.calendar div:hover {
+    background-color: #555; /* Dark grey */
+}
+
+.calendar div.selected {
+    background-color: yellow;
+    border: 2px solid red;
+}
